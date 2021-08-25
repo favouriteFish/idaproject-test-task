@@ -12,6 +12,307 @@
         <!-----------  Main  ---------->
         <main class="main">
 
+            <div class="container">
+                <div class="container__add-item add-item">
+                    <div class="add-item__title-cnt">
+                        <h2 class="add-item__title">Добавление товара</h2>
+                    </div>
+                    <div class="add-item__form-cnt">
+                        <form action="" class="add-item__form add-item-form">
+                            <div class="add-item-form__textbox-cnt">
+                                <div class="add-item-form__textbox-title add-item-form__textbox-title_required">
+                                    Наименование товара
+                                    <div class="required-point"></div>
+                                </div>
+                                <div class="add-item-form__input-cnt">
+                                    <input type="text" name="item-name" class="add-item-form__input"
+                                        placeholder="Введите наименование товара">
+                                </div>
+                            </div>
+                            <div class="add-item-form__textbox-cnt">
+                                <div class="add-item-form__textbox-title">
+                                    Описание товара
+                                    <div class="required-point"></div>
+                                </div>
+                                <div class="add-item-form__input-cnt">
+                                    <textarea type="text" name="item-description" class="add-item-form__input input-desc"
+                                        placeholder="Введите описание товара"></textarea>
+                                </div>
+                            </div>
+                            <div class="add-item-form__textbox-cnt">
+                                <div class="add-item-form__textbox-title add-item-form__textbox-title_required">
+                                    Ссылка на изображение товара
+                                    <div class="required-point"></div>
+                                </div>
+                                <div class="add-item-form__input-cnt">
+                                    <input type="text" name="item-picture-link" class="add-item-form__input"
+                                        placeholder="Введите ссылку">
+                                </div>
+                            </div>
+                            <div class="add-item-form__textbox-cnt">
+                                <div class="add-item-form__textbox-title add-item-form__textbox-title_required">
+                                    Цена товара
+                                    <div class="required-point"></div>
+                                </div>
+                                <div class="add-item-form__input-cnt">
+                                    <input type="text" name="item-price" class="add-item-form__input"
+                                        placeholder="Введите цену">
+                                </div>
+                            </div>
+                            <div class="add-item-form__btn-cnt">
+                                <button class="add-item-form__submit-button add-item-form__submit-button_active">
+                                    Добавить товар
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="container__main-content main-content">
+                    <div class="main-content__view-select-cnt">
+                        <div class="main-content__view-select view-select">
+                            <div class="view-select__title">По умолчанию</div>
+                            <div class="view-select__arrow"></div>
+                        </div>
+                    </div>
+                    <div class="main-content__grid grid">
+                        <div class="grid__product-card-cnt">
+                            <div class="grid__product-card product-card">
+                                <button class="product-card__delete-btn">
+                                    <img src="img/icons/bin-icon.svg" alt="" class="product-card__delete-btn-icon">
+                                </button>
+                                <div class="product-card__picture-cnt">
+                                    <picture>
+                                        <source srcset="img/pictures/item-pic.webp" type="image/webp">
+                                        <img src="img/pictures/item-pic.jpg" alt="" class="product-card__picture">
+                                    </picture>
+                                </div>
+                                <div class="product-card__info">
+                                    <h3 class="product-card__title">
+                                        Наименование товара
+                                    </h3>
+                                    <p class="product-card__description">
+                                        Довольно-таки интересное описание товара в несколько строк. Довольно-таки
+                                        интересное описание товара в несколько строк
+                                    </p>
+                                    <div class="product-card__price">
+                                        <span class="product-card__price-summ">10 000</span>
+                                        <span class="product-card__price-currency">руб.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__product-card-cnt">
+                            <div class="grid__product-card product-card">
+                                <button class="product-card__delete-btn">
+                                    <img src="img/icons/bin-icon.svg" alt="" class="product-card__delete-btn-icon">
+                                </button>
+                                <div class="product-card__picture-cnt">
+                                    <picture>
+                                        <source srcset="img/pictures/item-pic.webp" type="image/webp">
+                                        <img src="img/pictures/item-pic.jpg" alt="" class="product-card__picture">
+                                    </picture>
+                                </div>
+                                <div class="product-card__info">
+                                    <h3 class="product-card__title">
+                                        Наименование товара
+                                    </h3>
+                                    <p class="product-card__description">
+                                        Довольно-таки интересное описание товара в несколько строк. Довольно-таки
+                                        интересное описание товара в несколько строк
+                                    </p>
+                                    <div class="product-card__price">
+                                        <span class="product-card__price-summ">10 000</span>
+                                        <span class="product-card__price-currency">руб.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__product-card-cnt">
+                            <div class="grid__product-card product-card">
+                                <button class="product-card__delete-btn">
+                                    <img src="img/icons/bin-icon.svg" alt="" class="product-card__delete-btn-icon">
+                                </button>
+                                <div class="product-card__picture-cnt">
+                                    <picture>
+                                        <source srcset="img/pictures/item-pic.webp" type="image/webp">
+                                        <img src="img/pictures/item-pic.jpg" alt="" class="product-card__picture">
+                                    </picture>
+                                </div>
+                                <div class="product-card__info">
+                                    <h3 class="product-card__title">
+                                        Наименование товара
+                                    </h3>
+                                    <p class="product-card__description">
+                                        Довольно-таки интересное описание товара в несколько строк. Довольно-таки
+                                        интересное описание товара в несколько строк
+                                    </p>
+                                    <div class="product-card__price">
+                                        <span class="product-card__price-summ">10 000</span>
+                                        <span class="product-card__price-currency">руб.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__product-card-cnt">
+                            <div class="grid__product-card product-card">
+                                <button class="product-card__delete-btn">
+                                    <img src="img/icons/bin-icon.svg" alt="" class="product-card__delete-btn-icon">
+                                </button>
+                                <div class="product-card__picture-cnt">
+                                    <picture>
+                                        <source srcset="img/pictures/item-pic.webp" type="image/webp">
+                                        <img src="img/pictures/item-pic.jpg" alt="" class="product-card__picture">
+                                    </picture>
+                                </div>
+                                <div class="product-card__info">
+                                    <h3 class="product-card__title">
+                                        Наименование товара
+                                    </h3>
+                                    <p class="product-card__description">
+                                        Довольно-таки интересное описание товара в несколько строк. Довольно-таки
+                                        интересное описание товара в несколько строк
+                                    </p>
+                                    <div class="product-card__price">
+                                        <span class="product-card__price-summ">10 000</span>
+                                        <span class="product-card__price-currency">руб.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__product-card-cnt">
+                            <div class="grid__product-card product-card">
+                                <button class="product-card__delete-btn">
+                                    <img src="img/icons/bin-icon.svg" alt="" class="product-card__delete-btn-icon">
+                                </button>
+                                <div class="product-card__picture-cnt">
+                                    <picture>
+                                        <source srcset="img/pictures/item-pic.webp" type="image/webp">
+                                        <img src="img/pictures/item-pic.jpg" alt="" class="product-card__picture">
+                                    </picture>
+                                </div>
+                                <div class="product-card__info">
+                                    <h3 class="product-card__title">
+                                        Наименование товара
+                                    </h3>
+                                    <p class="product-card__description">
+                                        Довольно-таки интересное описание товара в несколько строк. Довольно-таки
+                                        интересное описание товара в несколько строк
+                                    </p>
+                                    <div class="product-card__price">
+                                        <span class="product-card__price-summ">10 000</span>
+                                        <span class="product-card__price-currency">руб.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__product-card-cnt">
+                            <div class="grid__product-card product-card">
+                                <button class="product-card__delete-btn">
+                                    <img src="img/icons/bin-icon.svg" alt="" class="product-card__delete-btn-icon">
+                                </button>
+                                <div class="product-card__picture-cnt">
+                                    <picture>
+                                        <source srcset="img/pictures/item-pic.webp" type="image/webp">
+                                        <img src="img/pictures/item-pic.jpg" alt="" class="product-card__picture">
+                                    </picture>
+                                </div>
+                                <div class="product-card__info">
+                                    <h3 class="product-card__title">
+                                        Наименование товара
+                                    </h3>
+                                    <p class="product-card__description">
+                                        Довольно-таки интересное описание товара в несколько строк. Довольно-таки
+                                        интересное описание товара в несколько строк
+                                    </p>
+                                    <div class="product-card__price">
+                                        <span class="product-card__price-summ">10 000</span>
+                                        <span class="product-card__price-currency">руб.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__product-card-cnt">
+                            <div class="grid__product-card product-card">
+                                <button class="product-card__delete-btn">
+                                    <img src="img/icons/bin-icon.svg" alt="" class="product-card__delete-btn-icon">
+                                </button>
+                                <div class="product-card__picture-cnt">
+                                    <picture>
+                                        <source srcset="img/pictures/item-pic.webp" type="image/webp">
+                                        <img src="img/pictures/item-pic.jpg" alt="" class="product-card__picture">
+                                    </picture>
+                                </div>
+                                <div class="product-card__info">
+                                    <h3 class="product-card__title">
+                                        Наименование товара
+                                    </h3>
+                                    <p class="product-card__description">
+                                        Довольно-таки интересное описание товара в несколько строк. Довольно-таки
+                                        интересное описание товара в несколько строк
+                                    </p>
+                                    <div class="product-card__price">
+                                        <span class="product-card__price-summ">10 000</span>
+                                        <span class="product-card__price-currency">руб.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__product-card-cnt">
+                            <div class="grid__product-card product-card">
+                                <button class="product-card__delete-btn">
+                                    <img src="img/icons/bin-icon.svg" alt="" class="product-card__delete-btn-icon">
+                                </button>
+                                <div class="product-card__picture-cnt">
+                                    <picture>
+                                        <source srcset="img/pictures/item-pic.webp" type="image/webp">
+                                        <img src="img/pictures/item-pic.jpg" alt="" class="product-card__picture">
+                                    </picture>
+                                </div>
+                                <div class="product-card__info">
+                                    <h3 class="product-card__title">
+                                        Наименование товара
+                                    </h3>
+                                    <p class="product-card__description">
+                                        Довольно-таки интересное описание товара в несколько строк. Довольно-таки
+                                        интересное описание товара в несколько строк
+                                    </p>
+                                    <div class="product-card__price">
+                                        <span class="product-card__price-summ">10 000</span>
+                                        <span class="product-card__price-currency">руб.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__product-card-cnt">
+                            <div class="grid__product-card product-card">
+                                <button class="product-card__delete-btn">
+                                    <img src="img/icons/bin-icon.svg" alt="" class="product-card__delete-btn-icon">
+                                </button>
+                                <div class="product-card__picture-cnt">
+                                    <picture>
+                                        <source srcset="img/pictures/item-pic.webp" type="image/webp">
+                                        <img src="img/pictures/item-pic.jpg" alt="" class="product-card__picture">
+                                    </picture>
+                                </div>
+                                <div class="product-card__info">
+                                    <h3 class="product-card__title">
+                                        Наименование товара
+                                    </h3>
+                                    <p class="product-card__description">
+                                        Довольно-таки интересное описание товара в несколько строк. Довольно-таки
+                                        интересное описание товара в несколько строк
+                                    </p>
+                                    <div class="product-card__price">
+                                        <span class="product-card__price-summ">10 000</span>
+                                        <span class="product-card__price-currency">руб.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
 
         <!-----------  Footer  ---------->
