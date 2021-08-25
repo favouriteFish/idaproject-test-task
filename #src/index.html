@@ -16,6 +16,10 @@
                 <div class="container__add-item add-item">
                     <div class="add-item__title-cnt">
                         <h2 class="add-item__title">Добавление товара</h2>
+                        <div class="add-item__close-btn">
+                            <span></span>
+                            <span></span>
+                        </div>
                     </div>
                     <div class="add-item__form-cnt">
                         <form action="" class="add-item__form add-item-form">
@@ -26,7 +30,7 @@
                                 </div>
                                 <div class="add-item-form__input-cnt">
                                     <input type="text" name="item-name" class="add-item-form__input"
-                                        placeholder="Введите наименование товара">
+                                        placeholder="Введите наименование товара" required>
                                 </div>
                             </div>
                             <div class="add-item-form__textbox-cnt">
@@ -46,7 +50,7 @@
                                 </div>
                                 <div class="add-item-form__input-cnt">
                                     <input type="text" name="item-picture-link" class="add-item-form__input"
-                                        placeholder="Введите ссылку">
+                                        placeholder="Введите ссылку" required>
                                 </div>
                             </div>
                             <div class="add-item-form__textbox-cnt">
@@ -56,11 +60,13 @@
                                 </div>
                                 <div class="add-item-form__input-cnt">
                                     <input type="text" name="item-price" class="add-item-form__input"
-                                        placeholder="Введите цену">
+                                        placeholder="Введите цену" required>
                                 </div>
                             </div>
                             <div class="add-item-form__btn-cnt">
-                                <button class="add-item-form__submit-button add-item-form__submit-button_active">
+                                <!-- Change attr "type" to "submit"-->
+                                <!-- if you want send the form -->
+                                <button type="button" class="add-item-form__submit-button">
                                     Добавить товар
                                 </button>
                             </div>
@@ -70,9 +76,18 @@
 
                 <div class="container__main-content main-content">
                     <div class="main-content__view-select-cnt">
+                        <!-- Add Product Btn for Mobile -->
+                        <button class="main-content__add-item-btn">Добавить товар</button>
+
                         <div class="main-content__view-select view-select">
                             <div class="view-select__title">По умолчанию</div>
                             <div class="view-select__arrow"></div>
+
+                            <div class="view-select__body">
+                                <div class="view-select__option">По убыванию</div>
+                                <div class="view-select__option">По возрастанию</div>
+                                <div class="view-select__option">По наименованию</div>
+                            </div>
                         </div>
                     </div>
                     <div class="main-content__grid grid">

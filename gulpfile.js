@@ -1,6 +1,6 @@
 const { watch } = require("gulp");
 
-let project_folder = "project";
+let project_folder = "docs";
 let source_folder = "#src";
 
 let path = {

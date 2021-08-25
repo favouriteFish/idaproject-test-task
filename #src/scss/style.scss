@@ -122,20 +122,39 @@ body.lock {
   padding: 30px 15px 0;
   display: flex;
 
+  @media (max-width: 767px) {
+    padding: 15px 15px 0;
+  }
+
   &__add-item {
     // flex: 0 0 calc(25% - 16px);
     flex: 0 0 332px;
     margin-right: 16px;
-    // @media (max-width: 1406px) {
-    //   position: fixed;
-    //   flex: 1 1 auto;
-    //   width: 332px;
-    //   z-index: 5;
-    //   background: #fffefb;
-    //   box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04),
-    //     0px 6px 10px rgba(0, 0, 0, 0.02);
-    //   border-radius: 4px;
-    // }
+    transition: all 0.3s ease-in-out;
+    z-index: 6;
+
+    @media (max-width: 1406px) {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      flex: 1 1 auto;
+      width: 332px;
+      max-height: calc(100vh - 30px);
+      background: #fffefb;
+      box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04),
+        0px 6px 10px rgba(0, 0, 0, 0.02);
+      border-radius: 4px;
+      overflow: hidden;
+      transform: translateX(calc(-100% - 15px));
+
+      &.add-item_active {
+        transform: translateX(0);
+      }
+    }
+
+    @media (max-width: 362px) {
+      width: calc(100% - 30px);
+    }
   }
 
   &__main-content {
@@ -146,10 +165,13 @@ body.lock {
 .add-item {
   &__title-cnt {
     margin-bottom: 17px;
-    // @media (max-width: 1406px) {
-    //   margin-bottom: 0;
-    //   padding: 24px 24px 0;
-    // }
+    @media (max-width: 1406px) {
+      margin-bottom: 0;
+      padding: 16px 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 
   &__title {
@@ -157,7 +179,37 @@ body.lock {
     font-size: 28px;
     line-height: 35px;
     color: #3f3f3f;
-    // @include adaptive("font-size", 28, 20, 1406, 320);
+    @include adaptive("font-size", 28, 20, 1406, 320);
+  }
+
+  &__close-btn { 
+    display: none;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    padding-left: 15px;
+    
+    span {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      display: block;
+      width: 25px;
+      height: 2px;
+      background-color: #3f3f3f;
+
+      &:first-child {
+        transform: rotate(45deg);
+      }
+
+      &:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+
+    @media (max-width: 1406px) {
+      display: block;
+    }
   }
 
   &__form-cnt {
@@ -167,10 +219,12 @@ body.lock {
       0px 6px 10px rgba(0, 0, 0, 0.02);
     border-radius: 4px;
     padding: 24px;
+    overflow-y: auto;
 
-    // @media (max-width: 1406px) {
-    //   box-shadow: none;
-    // }
+    @media (max-width: 1406px) {
+      max-height: calc(100vh - 59px - 30px);
+      box-shadow: none;
+    }
   }
 
   &__form {
@@ -213,6 +267,26 @@ body.lock {
   &__input-cnt {
     width: 100%;
     margin-top: 4px;
+
+    &.empty {
+      position: relative;
+
+      .add-item-form__input {
+        border: 1px solid #FF8484;
+      }
+
+      &:after {
+        content: 'Поле является обязательным';
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: -14px;
+        color: #FF8484;
+        width: 100%;
+        height: 10px;
+        font-size: 8px;
+      }
+    }
   }
 
   &__input {
@@ -225,6 +299,7 @@ body.lock {
     line-height: 15px;
     color: #3f3f3f;
     padding: 0 16px;
+    transition: all 0.3s ease-in-out;
 
     &.input-desc {
       height: 108px;
@@ -247,6 +322,7 @@ body.lock {
   &__btn-cnt {
     margin-top: 24px;
     width: 100%;
+    cursor: no-drop;
   }
 
   &__submit-button {
@@ -264,23 +340,48 @@ body.lock {
     color: #b4b4b4;
     background: #eeeeee;
     border-radius: 10px;
+    pointer-events: none;
+    cursor: no-drop;
+    transition: all 0.3s ease-in-out;
 
     &_active {
       background: #7bae73;
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
       color: #ffffff;
+      pointer-events: auto;
+      cursor: pointer;
     }
   }
 }
 
 .main-content {
+  &__add-item-btn {
+    display: none;
+    @media (max-width: 1406px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #fffefb;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      padding: 0 16px;
+      font-size: 12px;
+    }
+  }
+
   &__view-select-cnt {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 16px;
+
+    @media (max-width: 1406px) {
+      justify-content: space-between;
+    }
   }
 
   &__view-select {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -290,6 +391,7 @@ body.lock {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     cursor: pointer;
+    z-index: 5;
   }
 
   &__grid {
@@ -326,23 +428,59 @@ body.lock {
       border-right: 1px solid #3f3f3f;
       border-bottom: 1px solid #3f3f3f;
     }
+
+    .view-select__body {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__body {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &__option {
+    padding: 12px 16px;
+    background: #FFFEFB;
+    color: #3F3F3F;
+    font-size: 12px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background: #e9e9e9;
+    }
   }
 }
 
 .grid {
   &__product-card-cnt {
     flex: 0 1 calc(1 / 3 * 100% - 16px);
-    margin: 0 8px;
+    margin: 0 8px 16px 8px;
+
+    @media (max-width: 767px) {
+      flex: 0 1 calc(50% - 16px);
+    }
+    
+    @media (max-width: 450px) {
+      flex: 0 1 calc(100% - 16px);
+    }
   }
 
   &__product-card {
     position: relative;
     width: 100%;
+    height: 100%;
     background: #fffefb;
     box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04),
       0px 6px 10px rgba(0, 0, 0, 0.02);
     border-radius: 4px;
-    margin-bottom: 16px;
   }
 }
 
@@ -385,7 +523,11 @@ body.lock {
 
   &__info {
     padding: 16px 16px 24px;
-    color: #3F3F3F;
+    color: #3f3f3f;
+
+    @media (max-width: 767px) {
+      padding: 12px 12px 16px;
+    }
   }
 
   &__title {
@@ -398,6 +540,10 @@ body.lock {
     margin-top: 15px;
     font-size: 16px;
     line-height: 20px;
+
+    @media (max-width: 767px) {
+      margin-top: 10px;
+    }
   }
 
   &__price {
@@ -405,6 +551,10 @@ body.lock {
     font-weight: 600;
     font-size: 24px;
     line-height: 30px;
+
+    @media (max-width: 767px) {
+      margin-top: 16px;
+    }
   }
 }
 
